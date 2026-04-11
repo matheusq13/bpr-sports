@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green: #19F28A;
+  --green-lt: #3DFFAB;
+  --bg: #050505;
+  --bg-alt: #0B0F0E;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+}
+
+body {
+  background-color: var(--bg);
+  color: #F5F7F6;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(25, 242, 138, 0.25);
+  color: #F5F7F6;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(25, 242, 138, 0.3);
+  border-radius: 2px;
+}
+
+@layer utilities {
+  .glow-green {
+    box-shadow: 0 0 24px rgba(25, 242, 138, 0.25), 0 0 8px rgba(25, 242, 138, 0.15);
+  }
+  .glow-green-sm {
+    box-shadow: 0 0 12px rgba(25, 242, 138, 0.18);
+  }
+  .text-glow {
+    text-shadow: 0 0 30px rgba(25, 242, 138, 0.4);
+  }
+  .border-subtle {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+}
