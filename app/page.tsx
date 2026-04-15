@@ -32,7 +32,7 @@ const BRAND = {
   name:        "BPR Sports",
   tagline:     "Performance. Estratégia. Conexão.",
   logoPath:    "/logo-bpr.png",
-  heroImage:   "/hero-bpr.jpg",
+  heroImage:   "/CARD-SITE.png",
   whatsapp:    "https://wa.me/5500000000000",
   instagram:   "https://instagram.com/bpr_sportshub",
   email:       "contato@bprsports.com",
@@ -407,7 +407,7 @@ function Hero() {
                 <div className="aspect-[4/5] bg-[#050505] relative">
                   {/* Logo */}
                   <Image
-                    src={BRAND.logoPath}
+                    src={BRAND.heroImage}
                     alt="BPR Sports"
                     fill
                     className="object-contain p-10"
@@ -422,7 +422,7 @@ function Hero() {
                   <motion.div
                     animate={{ y: [0, -6, 0] }}
                     transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                    className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#0B0F0E]/90 backdrop-blur-xl border border-white/[0.08]"
+                    className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#0B0F0E]/30 backdrop-blur-xl border border-white/[0.08]"
                   >
                     <p className="text-[11px] text-[#A7B0AC] mb-2 uppercase tracking-widest font-medium">Performance Global</p>
                     <div className="flex items-center justify-between">
