@@ -404,19 +404,19 @@ function Hero() {
 
               {/* Main image frame */}
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.07] shadow-[0_32px_80px_rgba(0,0,0,0.6)]">
-                <div className="aspect-[4/5] bg-gradient-to-br from-[#0B0F0E] via-[#080C0B] to-[#050505] relative">
-                  {/* Placeholder visual — replace with <Image> once asset is ready */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 opacity-20">
-                    <div className="w-24 h-24 rounded-full border-2 border-[#19F28A]/40 flex items-center justify-center">
-                      <span className="text-[#19F28A] font-black text-2xl">BPR</span>
-                    </div>
-                    <div className="w-32 h-px bg-gradient-to-r from-transparent via-[#19F28A]/40 to-transparent" />
-                    <span className="text-[#A7B0AC] text-xs tracking-widest uppercase">Hero Image</span>
-                  </div>
+                <div className="aspect-[4/5] bg-[#050505] relative">
+                  {/* Logo */}
+                  <Image
+                    src={BRAND.logoPath}
+                    alt="BPR Sports"
+                    fill
+                    className="object-contain p-10"
+                    priority
+                  />
 
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/40 via-transparent to-transparent" />
+                  {/* Gradient overlay — garante leitura do card */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_90%_at_50%_50%,transparent_40%,rgba(5,5,5,0.5)_100%)]" />
 
                   {/* Floating stat card */}
                   <motion.div
