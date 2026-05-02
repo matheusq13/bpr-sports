@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,8 +5,11 @@
 :root {
   --green: #19F28A;
   --green-lt: #3DFFAB;
+  --red: #E10A1C;
+  --red-lt: #FF2A3A;
   --bg: #050505;
   --bg-alt: #0B0F0E;
+  --graphite: #15191B;
 }
 
 * {
@@ -23,39 +24,95 @@ html {
 body {
   background-color: var(--bg);
   color: #F5F7F6;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(25, 242, 138, 0.25);
+  background: rgba(225, 10, 28, 0.35);
   color: #F5F7F6;
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: #050505;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(25, 242, 138, 0.3);
-  border-radius: 2px;
+  background: linear-gradient(180deg, rgba(225, 10, 28, 0.6), rgba(25, 242, 138, 0.4));
+  border-radius: 3px;
 }
 
 @layer utilities {
   .glow-green {
-    box-shadow: 0 0 24px rgba(25, 242, 138, 0.25), 0 0 8px rgba(25, 242, 138, 0.15);
+    box-shadow: 0 0 28px rgba(25, 242, 138, 0.35), 0 0 8px rgba(25, 242, 138, 0.2);
   }
   .glow-green-sm {
-    box-shadow: 0 0 12px rgba(25, 242, 138, 0.18);
+    box-shadow: 0 0 12px rgba(25, 242, 138, 0.22);
   }
-  .text-glow {
-    text-shadow: 0 0 30px rgba(25, 242, 138, 0.4);
+  .glow-red {
+    box-shadow: 0 0 28px rgba(225, 10, 28, 0.45), 0 0 8px rgba(225, 10, 28, 0.25);
+  }
+  .glow-red-sm {
+    box-shadow: 0 0 12px rgba(225, 10, 28, 0.25);
+  }
+  .text-glow-green {
+    text-shadow: 0 0 30px rgba(25, 242, 138, 0.45);
+  }
+  .text-glow-red {
+    text-shadow: 0 0 30px rgba(225, 10, 28, 0.55);
   }
   .border-subtle {
     border-color: rgba(255, 255, 255, 0.08);
+  }
+  .display-font {
+    font-family: var(--font-bebas), 'Inter', system-ui, sans-serif;
+    letter-spacing: 0.02em;
+  }
+  .gradient-text-green {
+    background: linear-gradient(135deg, #19F28A 0%, #3DFFAB 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gradient-text-red {
+    background: linear-gradient(135deg, #E10A1C 0%, #FF2A3A 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gradient-border-red {
+    background: linear-gradient(#0B0F0E, #0B0F0E) padding-box,
+                linear-gradient(135deg, rgba(225,10,28,0.6), rgba(255,42,58,0.2)) border-box;
+    border: 1px solid transparent;
+  }
+  .gradient-border-green {
+    background: linear-gradient(#0B0F0E, #0B0F0E) padding-box,
+                linear-gradient(135deg, rgba(25,242,138,0.6), rgba(61,255,171,0.2)) border-box;
+    border: 1px solid transparent;
+  }
+  .stadium-bg {
+    background-image:
+      linear-gradient(180deg, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.95) 60%, #050505 100%),
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(225,10,28,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 50% at 50% 100%, rgba(25,242,138,0.12) 0%, transparent 60%);
+  }
+  .grid-overlay {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .ticker-stripe {
+    background: repeating-linear-gradient(
+      135deg,
+      rgba(225,10,28,0.9) 0,
+      rgba(225,10,28,0.9) 12px,
+      rgba(5,5,5,0.95) 12px,
+      rgba(5,5,5,0.95) 24px
+    );
   }
 }
