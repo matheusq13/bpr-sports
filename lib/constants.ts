@@ -1,7 +1,7 @@
 export const PAYMENT_UNITARIO_URL = "https://pag.ae/81KAXpojt";
 export const PAYMENT_DUPLO_URL = "https://pag.ae/81KA_rjM7";
 
-export const JOTFORM_EMBED_URL = "COLE_AQUI_O_LINK_DO_SEU_JOTFORM";
+export const JOTFORM_EMBED_URL: string = "https://form.jotform.com/261048050354045";
 
 export const WHATSAPP_URL = "#";
 export const INSTAGRAM_URL = "#";

@@ -1,13 +1,54 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { ExternalLink, FileText, ShieldCheck } from "lucide-react";
 import { JOTFORM_EMBED_URL, PAYMENT_DUPLO_URL, PAYMENT_UNITARIO_URL } from "@/lib/constants";
 import SectionHeader from "./SectionHeader";
 
 const PLACEHOLDER = "COLE_AQUI_O_LINK_DO_SEU_JOTFORM";
+const JOTFORM_HANDLER_SRC = "https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js";
+
+declare global {
+  interface Window {
+    jotformEmbedHandler?: (selector: string, origin: string) => void;
+  }
+}
 
 export default function JotformSection() {
   const ready = JOTFORM_EMBED_URL && JOTFORM_EMBED_URL !== PLACEHOLDER;
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    if (!ready || !iframeRef.current) return;
+
+    const iframeId = iframeRef.current.id;
+    const origin = new URL(JOTFORM_EMBED_URL).origin;
+
+    const initHandler = () => {
+      window.jotformEmbedHandler?.(`iframe[id='${iframeId}']`, origin);
+    };
+
+    const existing = document.querySelector<HTMLScriptElement>(
+      `script[src='${JOTFORM_HANDLER_SRC}']`
+    );
+
+    if (existing && window.jotformEmbedHandler) {
+      initHandler();
+      return;
+    }
+
+    const script = existing ?? document.createElement("script");
+    if (!existing) {
+      script.src = JOTFORM_HANDLER_SRC;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    script.addEventListener("load", initHandler);
+
+    return () => {
+      script.removeEventListener("load", initHandler);
+    };
+  }, [ready]);
 
   return (
     <section id="inscricao" className="relative py-24 lg:py-32 overflow-hidden bg-rubra-dark/40">
@@ -38,11 +79,14 @@ export default function JotformSection() {
         <div className="mt-8 rounded-3xl border border-white/10 bg-rubra-black/70 p-2 backdrop-blur-sm">
           {ready ? (
             <iframe
+              ref={iframeRef}
+              id="JotFormIFrame-261048050354045"
               src={JOTFORM_EMBED_URL}
               title="Formulário de inscrição RUBRA Sports"
               className="w-full rounded-2xl border-0"
               style={{ minHeight: 720 }}
-              allow="geolocation; microphone; camera; fullscreen"
+              allow="geolocation; microphone; camera; fullscreen; payment"
+              allowFullScreen
             />
           ) : (
             <div className="flex flex-col items-center justify-center text-center px-6 py-20 sm:py-28 rounded-2xl border border-dashed border-rubra-green/30 bg-rubra-dark/60">

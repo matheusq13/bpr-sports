@@ -17,6 +17,7 @@ const bebas = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rubra-sports.vercel.app/"),
   title: "RUBRA Sports — Staff Experience | Viva o esporte por dentro",
   description:
     "Participe do RUBRA Sports Staff Experience, uma imersão presencial no CT Resende Futebol Clube com transporte, alimentação, palestra técnica, tour, aula prática, foto oficial e certificado.",
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     siteName: "RUBRA Sports",
+    url: "https://rubra-sports.vercel.app/",
   },
   twitter: {
     card: "summary_large_image",
