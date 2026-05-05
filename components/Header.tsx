@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const NAV = [
@@ -31,10 +32,18 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <a href="#" className="flex items-center gap-2 group">
-          <span className="display-font text-2xl tracking-wider text-rubra-white">
-            <span className="gradient-text-red">RUBRA</span>
-            <span className="text-rubra-white/70 ml-1.5 text-base font-light">Sports</span>
+        <a href="#" className="flex items-center gap-2.5 group">
+          <Image
+            src="/rubra-mark.svg"
+            alt="RUBRA Sports"
+            width={40}
+            height={40}
+            priority
+            className="rounded-md"
+          />
+          <span className="display-font text-2xl tracking-wider">
+            <span className="gradient-text-green">RUBRA</span>
+            <span className="text-rubra-white/80 ml-1.5 text-base font-light tracking-[0.25em]">SPORTS</span>
           </span>
         </a>
 

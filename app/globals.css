@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --green: #19F28A;
-  --green-lt: #3DFFAB;
-  --red: #E10A1C;
-  --red-lt: #FF2A3A;
-  --bg: #050505;
-  --bg-alt: #0B0F0E;
-  --graphite: #15191B;
+  --green: #2EE584;
+  --green-lt: #4FF09A;
+  --red: #B91D2F;
+  --red-lt: #D62A40;
+  --bg: #081A15;
+  --bg-alt: #0E2620;
+  --graphite: #15302A;
 }
 
 * {
@@ -23,7 +23,7 @@ html {
 
 body {
   background-color: var(--bg);
-  color: #F5F7F6;
+  color: #FFFFFF;
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,39 +31,39 @@ body {
 }
 
 ::selection {
-  background: rgba(225, 10, 28, 0.35);
-  color: #F5F7F6;
+  background: rgba(185, 29, 47, 0.45);
+  color: #FFFFFF;
 }
 
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #081A15;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(225, 10, 28, 0.6), rgba(25, 242, 138, 0.4));
+  background: linear-gradient(180deg, rgba(185, 29, 47, 0.6), rgba(46, 229, 132, 0.5));
   border-radius: 3px;
 }
 
 @layer utilities {
   .glow-green {
-    box-shadow: 0 0 28px rgba(25, 242, 138, 0.35), 0 0 8px rgba(25, 242, 138, 0.2);
+    box-shadow: 0 0 28px rgba(46, 229, 132, 0.38), 0 0 8px rgba(46, 229, 132, 0.22);
   }
   .glow-green-sm {
-    box-shadow: 0 0 12px rgba(25, 242, 138, 0.22);
+    box-shadow: 0 0 12px rgba(46, 229, 132, 0.25);
   }
   .glow-red {
-    box-shadow: 0 0 28px rgba(225, 10, 28, 0.45), 0 0 8px rgba(225, 10, 28, 0.25);
+    box-shadow: 0 0 28px rgba(185, 29, 47, 0.45), 0 0 8px rgba(185, 29, 47, 0.25);
   }
   .glow-red-sm {
-    box-shadow: 0 0 12px rgba(225, 10, 28, 0.25);
+    box-shadow: 0 0 12px rgba(185, 29, 47, 0.28);
   }
   .text-glow-green {
-    text-shadow: 0 0 30px rgba(25, 242, 138, 0.45);
+    text-shadow: 0 0 30px rgba(46, 229, 132, 0.5);
   }
   .text-glow-red {
-    text-shadow: 0 0 30px rgba(225, 10, 28, 0.55);
+    text-shadow: 0 0 30px rgba(185, 29, 47, 0.55);
   }
   .border-subtle {
     border-color: rgba(255, 255, 255, 0.08);
@@ -73,32 +73,32 @@ body {
     letter-spacing: 0.02em;
   }
   .gradient-text-green {
-    background: linear-gradient(135deg, #19F28A 0%, #3DFFAB 100%);
+    background: linear-gradient(135deg, #2EE584 0%, #4FF09A 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .gradient-text-red {
-    background: linear-gradient(135deg, #E10A1C 0%, #FF2A3A 100%);
+    background: linear-gradient(135deg, #B91D2F 0%, #D62A40 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .gradient-border-red {
-    background: linear-gradient(#0B0F0E, #0B0F0E) padding-box,
-                linear-gradient(135deg, rgba(225,10,28,0.6), rgba(255,42,58,0.2)) border-box;
+    background: linear-gradient(#0E2620, #0E2620) padding-box,
+                linear-gradient(135deg, rgba(185,29,47,0.65), rgba(214,42,64,0.2)) border-box;
     border: 1px solid transparent;
   }
   .gradient-border-green {
-    background: linear-gradient(#0B0F0E, #0B0F0E) padding-box,
-                linear-gradient(135deg, rgba(25,242,138,0.6), rgba(61,255,171,0.2)) border-box;
+    background: linear-gradient(#0E2620, #0E2620) padding-box,
+                linear-gradient(135deg, rgba(46,229,132,0.6), rgba(79,240,154,0.2)) border-box;
     border: 1px solid transparent;
   }
   .stadium-bg {
     background-image:
-      linear-gradient(180deg, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.95) 60%, #050505 100%),
-      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(225,10,28,0.18) 0%, transparent 60%),
-      radial-gradient(ellipse 70% 50% at 50% 100%, rgba(25,242,138,0.12) 0%, transparent 60%);
+      linear-gradient(180deg, rgba(8,26,21,0.85) 0%, rgba(8,26,21,0.95) 60%, #081A15 100%),
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(185,29,47,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 50% at 50% 100%, rgba(46,229,132,0.14) 0%, transparent 60%);
   }
   .grid-overlay {
     background-image:
@@ -109,10 +109,10 @@ body {
   .ticker-stripe {
     background: repeating-linear-gradient(
       135deg,
-      rgba(225,10,28,0.9) 0,
-      rgba(225,10,28,0.9) 12px,
-      rgba(5,5,5,0.95) 12px,
-      rgba(5,5,5,0.95) 24px
+      rgba(185,29,47,0.9) 0,
+      rgba(185,29,47,0.9) 12px,
+      rgba(8,26,21,0.95) 12px,
+      rgba(8,26,21,0.95) 24px
     );
   }
 }

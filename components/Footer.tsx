@@ -1,25 +1,35 @@
+import Image from "next/image";
 import { Instagram, MessageCircle, MapPin, Calendar, Clock } from "lucide-react";
 import { INSTAGRAM_URL, PRIVACY_URL, TERMS_URL, WHATSAPP_URL } from "@/lib/constants";
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-white/8 bg-rubra-black">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-rubra-red/60 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-rubra-green/60 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div>
-            <p className="display-font text-3xl tracking-wider">
-              <span className="gradient-text-red">RUBRA</span>
-              <span className="text-rubra-white/70 ml-2 text-lg font-light">Sports</span>
-            </p>
-            <p className="mt-3 display-font text-xl uppercase text-rubra-white/80">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/rubra-mark.svg"
+                alt="RUBRA Sports"
+                width={56}
+                height={56}
+                className="rounded-md"
+              />
+              <p className="display-font text-3xl tracking-wider">
+                <span className="gradient-text-green">RUBRA</span>
+                <span className="text-rubra-white/80 ml-2 text-lg font-light tracking-[0.25em]">SPORTS</span>
+              </p>
+            </div>
+            <p className="mt-4 display-font text-xl uppercase text-rubra-white/80">
               Viva o esporte por dentro.
             </p>
           </div>
 
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-rubra-redLt">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-rubra-green">
               Staff Experience
             </h4>
             <ul className="mt-4 space-y-2 text-sm text-rubra-white/70">
@@ -36,7 +46,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-rubra-redLt">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-rubra-green">
               Contato & Redes
             </h4>
             <div className="mt-4 flex items-center gap-3">
