@@ -32,19 +32,15 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <a href="#" className="flex items-center gap-2.5 group">
+        <a href="#" aria-label="RUBRA Sports" className="flex items-center group">
           <Image
-            src="/rubra-mark.svg"
+            src="/rubra-logo.png"
             alt="RUBRA Sports"
-            width={40}
-            height={40}
+            width={180}
+            height={56}
             priority
-            className="rounded-md"
+            className="h-10 w-auto sm:h-12"
           />
-          <span className="display-font text-2xl tracking-wider">
-            <span className="gradient-text-green">RUBRA</span>
-            <span className="text-rubra-white/80 ml-1.5 text-base font-light tracking-[0.25em]">SPORTS</span>
-          </span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">

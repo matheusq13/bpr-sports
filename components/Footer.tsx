@@ -10,20 +10,14 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div>
-            <div className="flex items-center gap-3">
-              <Image
-                src="/rubra-mark.svg"
-                alt="RUBRA Sports"
-                width={56}
-                height={56}
-                className="rounded-md"
-              />
-              <p className="display-font text-3xl tracking-wider">
-                <span className="gradient-text-green">RUBRA</span>
-                <span className="text-rubra-white/80 ml-2 text-lg font-light tracking-[0.25em]">SPORTS</span>
-              </p>
-            </div>
-            <p className="mt-4 display-font text-xl uppercase text-rubra-white/80">
+            <Image
+              src="/rubra-logo.png"
+              alt="RUBRA Sports"
+              width={240}
+              height={72}
+              className="h-14 w-auto"
+            />
+            <p className="mt-5 display-font text-xl uppercase text-rubra-white/80">
               Viva o esporte por dentro.
             </p>
           </div>
